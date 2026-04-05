@@ -1,0 +1,26 @@
+name: pinc-security
+description: PINC Security module - 6-phase security, hardware fingerprinting, anti-theft, AES-256 encryption
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_secure_storage: ^9.0.0
+  crypto: ^3.0.3
+  uuid: ^4.2.1
+  shared_preferences: ^2.2.2
+  device_info_plus: ^9.1.0
+  local_auth: ^2.1.8
+  flutter_sms_gateway: ^1.0.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
