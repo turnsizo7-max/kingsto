@@ -144,7 +144,7 @@ class _WithdrawScreenState extends State<WithdrawScreen> {
                       value: currencyFormat.format(_amount),
                     ),
                     _BreakdownRow(
-                      label: 'Fee (2% + \$0.50)',
+                      label: 'Fee (3% + \$0.50)',
                       value: '-${currencyFormat.format(_fee)}',
                     ),
                     const Divider(),

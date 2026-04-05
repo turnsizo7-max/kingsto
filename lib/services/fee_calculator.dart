@@ -14,12 +14,12 @@ class FeeConfig {
   static const double depositPercentFee = 1.5; // 1.5%
   static const double depositFixedFee = 0.25; // $0.25
   
-  // Withdrawal fees
-  static const double withdrawalPercentFee = 2.0; // 2.0%
+  // Withdrawal fees - EXACT SPEC: 3%
+  static const double withdrawalPercentFee = 3.0; // 3%
   static const double withdrawalFixedFee = 0.50; // $0.50
   
-  // Escrow fees (platform fee for job escrow)
-  static const double escrowPercentFee = 5.0; // 5%
+  // Escrow fees (platform fee for job) - EXACT SPEC: 9%
+  static const double escrowPercentFee = 9.0; // 9%
   static const double escrowFixedFee = 0.25; // $0.25
   
   // Currency conversion fee

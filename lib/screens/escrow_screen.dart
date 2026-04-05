@@ -155,7 +155,7 @@ class _EscrowScreenState extends State<EscrowScreen> {
                   child: Column(
                     children: [
                       Text('Job Amount: ${currencyFormat.format(_amount)}'),
-                      Text('Platform Fee: +${currencyFormat.format(FeeCalculator.calculateEscrowFee(_amount))}'),
+                      Text('Platform Fee: +${currencyFormat.format(FeeCalculator.calculateEscrowFee(_amount))} (9%)'),
                       Text(
                         'Total Required: ${currencyFormat.format(FeeCalculator.calculateTotalEscrowAmount(_amount))}',
                         style: const TextStyle(fontWeight: FontWeight.bold),
