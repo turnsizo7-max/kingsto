@@ -44,7 +44,9 @@ class _TetrisScreenState extends State<TetrisScreen> {
   void _spawnPiece() {
     Random random = Random();
     final pieceIndex = random.nextInt(_pieces.length);
-    _currentPiece = _pieces[pieceIndex].map((p) => Point(p.x + 4, p.y)).toList();
+    // Get the first (and only) inner list for this piece type
+    final pieceTemplate = _pieces[pieceIndex][0];
+    _currentPiece = pieceTemplate.map((p) => Point(p.x + 4, p.y)).toList();
     _currentColor = random.nextInt(6) + 1;
     if (!_canMove(_currentPiece)) {
       setState(() => _gameOver = true);

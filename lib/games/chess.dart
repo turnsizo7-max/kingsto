@@ -1,3 +1,4 @@
+import 'dart:math';
 import 'package:flutter/material.dart';
 
 class ChessScreen extends StatefulWidget {
@@ -82,9 +83,8 @@ class _ChessScreenState extends State<ChessScreen> {
                     child: Center(
                       child: Text(
                         _board[row][col],
-                        fontSize: 32,
-                        color: _board[row][col].isNotEmpty && _board[row][col] == _board[row][col].toUpperCase() 
-                            ? Colors.black : Colors.white,
+                        style: TextStyle(fontSize: 32, color: _board[row][col].isNotEmpty && _board[row][col] == _board[row][col].toUpperCase() 
+                            ? Colors.black : Colors.white),
                       ),
                     ),
                   ),

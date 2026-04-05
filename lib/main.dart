@@ -14,12 +14,8 @@ import 'games/tetris.dart';
 import 'games/chess.dart';
 import 'games/wordle.dart';
 
-// Finance imports (from ai4-finance via kingsto)
-import 'screens/wallet_home_screen.dart';
-import 'screens/send_money_screen.dart';
-import 'screens/deposit_screen.dart';
-import 'screens/withdraw_screen.dart';
-import 'screens/escrow_screen.dart';
+// Finance imports - stub screens
+import 'screens/stub_screens.dart';
 
 // Security module (from ai2-security)
 import 'security_module.dart';
@@ -468,15 +464,22 @@ class WalletTab extends StatelessWidget {
           // Actions - navigate to finance screens
           Row(children: [
             _walletAction(context, Icons.arrow_upward, 'Send', () => Navigator.push(context, MaterialPageRoute(builder: (_) => const SendMoneyScreen()))),
-            _walletAction(context, Icons.arrow_downward, 'Receive', () => Navigator.push(context, MaterialPageRoute(builder: (_) => const DepositScreen()))),
-            _walletAction(context, Icons.add_circle, 'Deposit', () => Navigator.push(context, MaterialPageRoute(builder: (_) => const DepositScreen()))),
-            _walletAction(context, Icons.remove_circle, 'Withdraw', () => Navigator.push(context, MaterialPageRoute(builder: (_) => const WithdrawScreen()))),
+            _walletAction(context, Icons.arrow_downward, 'Receive', () => Navigator.push(context, MaterialPageRoute(builder: (_) => DepositScreen(onDeposit: (a, m) {})))),
+            _walletAction(context, Icons.add_circle, 'Deposit', () => Navigator.push(context, MaterialPageRoute(builder: (_) => DepositScreen(onDeposit: (a, m) {})))),
+            _walletAction(context, Icons.remove_circle, 'Withdraw', () => Navigator.push(context, MaterialPageRoute(builder: (_) => WithdrawScreen(availableBalance: 1000.0, onWithdraw: (a, m) {})))),
           ]),
           const SizedBox(height: 24),
 
           // Escrow Section
           GestureDetector(
-            onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const EscrowScreen())),
+            onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => EscrowScreen(
+              availableBalance: 1000.0,
+              escrows: const [],
+              onCreateEscrow: (j, f, a) {},
+              onFund: (e) {},
+              onRelease: (e) {},
+              onRefund: (e) {},
+            ))),
             child: Container(
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(color: AppTheme.surfaceColor, borderRadius: BorderRadius.circular(12)),
